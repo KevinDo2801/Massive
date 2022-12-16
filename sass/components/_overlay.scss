@@ -1,0 +1,158 @@
+.overlay-hover {
+    a{
+        text-decoration: none;
+    }
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 20px solid $color-gray-6;
+    background-color: $color-white-3;
+    text-align: center;
+    transition: all .3s;
+    opacity: 0;
+
+    .overlay-btn {
+        color: $color-black-4;
+        font-size: $fs-5;
+        transform: translateY(50px);
+        transition: all .3s;
+    }
+
+    .overlay-dsc {
+        box-shadow: none;
+        transform: translateY(160px);
+        transition: all .3s;
+
+        h4 {
+            margin-bottom: $mg-1;
+            letter-spacing: $letter-spacing-4 + 1;
+            text-transform: uppercase;
+            @include styleText($color-black-3, $fs-1, $fw-4);
+            transition: all .5s;
+            &:hover {
+                color: $color-yellow-0;
+            }
+        }
+
+        p {
+            margin-bottom: 0;
+            letter-spacing: $letter-spacing-4;
+            text-transform: uppercase;
+            @include styleText($color-gray-7, $fs-0 - 1, $fw-4);
+            transition: all .5s;
+            &:hover {
+                color: $color-yellow-0;
+            }
+        }
+    }
+
+    &:hover {
+        opacity: 1;
+
+        .overlay-btn {
+            transform: translateY(180%);
+        }
+
+        .overlay-dsc {
+            transform: translateY(150%);
+        }
+    }
+
+    @include responsive("screen-1") {
+        .overlay-btn {
+            transform: translateY(30%);
+        }
+    
+        .overlay-dsc {
+            transform: translateY(200%);
+        }
+
+        &:hover {
+            .overlay-btn {
+                transform: translateY(160%);
+            }
+    
+            .overlay-dsc {
+                transform: translateY(120%);
+            }
+        }
+    }
+
+    @include responsive("extra-large") {
+        .overlay-btn {
+            transform: translateY(10%);
+        }
+    
+        .overlay-dsc {
+            transform: translateY(120%);
+        }
+        &:hover {
+            .overlay-btn {
+                transform: translateY(100%);
+            }
+    
+            .overlay-dsc {
+                transform: translateY(70%);
+            }
+        }
+    }
+
+    @include responsive("large") {
+        .overlay-btn {
+            transform: translateY(10%);
+        }
+    
+        .overlay-dsc {
+            transform: translateY(150%);
+        }
+        &:hover {
+            .overlay-btn {
+                transform: translateY(130%);
+            }
+    
+            .overlay-dsc {
+                transform: translateY(90%);
+            }
+        }
+    }
+
+    @include responsive("medium") {
+        .overlay-btn {
+            transform: translateY(20%);
+        }
+    
+        .overlay-dsc {
+            transform: translateY(200%);
+        }
+        &:hover {
+            .overlay-btn {
+                transform: translateY(150%);
+            }
+    
+            .overlay-dsc {
+                transform: translateY(120%);
+            }
+        }
+    }
+
+    @include responsive("small") {
+        .overlay-btn {
+            transform: translateY(50%);
+        }
+    
+        .overlay-dsc {
+            transform: translateY(500%);
+        }
+        &:hover {
+            .overlay-btn {
+                transform: translateY(400%);
+            }
+    
+            .overlay-dsc {
+                transform: translateY(300%);
+            }
+        }
+    }
+}

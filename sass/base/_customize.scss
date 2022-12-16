@@ -1,0 +1,70 @@
+.section {
+    padding: 100px 0;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: $mg-4;
+
+    h3 {
+        position: relative;
+        text-transform: uppercase;
+        padding-bottom: $pd-0 - 2;
+        margin-bottom: $mg-1;
+        letter-spacing: $letter-spacing-2;
+        font-size: $fs-7;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 43px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background-color: $color-black-4;
+        }
+    }
+
+    .half-txt {
+        @include styleText($color-gray-2, $fs-2, $fw-4);
+        display: inline-block;
+        line-height: $line-height-2;
+        max-width: 59%;
+    }
+
+    @include responsive("large") {
+        .half-txt {
+            max-width: 80%;
+        }
+    }
+
+    @include responsive("medium") {
+        h3 {
+            font-size: $fs-3;
+        }
+
+        .half-txt {
+            max-width: 80%;
+        }
+    }
+
+    @include responsive("small") {
+        .half-txt {
+            max-width: 100%;
+        }
+    }
+
+}
+
+.animate__zoomIn {
+    display: inline-block;
+    animation-duration: .3s;
+    /* don't forget to set a duration! */
+}
+
+::selection {
+    color: #fff;
+    background: $color-yellow-0;
+    text-shadow: none;
+}

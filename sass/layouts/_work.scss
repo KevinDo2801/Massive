@@ -1,0 +1,173 @@
+.work {
+    .work__top {
+        background-image: url(../../img/pattern-2.png);
+        background-repeat: repeat;
+        background-attachment: fixed;
+        line-height: $line-height-4;
+
+        .work__content {
+            width: 75%;
+            margin: 0 auto;
+
+            .nav-tabs {
+                border: none;
+
+                .nav-item {
+                    .nav-link {
+                        border: none;
+                        background-color: none;
+                        padding: 0;
+                        margin-right: $mg-1;
+                        margin-bottom: $mg-0;
+
+                        i {
+                            position: relative;
+                            transition: all .3s ease;
+                            color: $color-black-7;
+                            border-radius: 0;
+                            background: $color-gray-11;
+                            padding: $pd-7 $pd-8;
+                            font-size: $fs-5 + 1;
+
+                            &::after {
+                                position: absolute;
+                                bottom: -4px;
+                                left: 79px;
+                                content: "";
+                                border: 1px solid $color-white-2;
+                                background-color: $color-white-2;
+                                transform: rotate(45deg);
+                                width: 10px;
+                                height: 10px;
+                                opacity: 0;
+                                transition: all .3s ease;
+                            }
+                        }
+
+                        &.active {
+                            background-color: $color-white-2;
+                            border: none;
+
+                            i {
+                                background-color: $color-white-2;
+
+                                &::after {
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .tab-content {
+                .work__item {
+                    padding: $pd-1 0;
+
+                    h5 {
+                        letter-spacing: $letter-spacing-2;
+                        @include styleText($color-gray-2,
+                            $fs-1, $fw-4);
+                    }
+
+                    h1 {
+                        font-size: $fs-4;
+                        letter-spacing: $letter-spacing-2;
+                        color: $color-black-1;
+                        margin-bottom: $mg-2;
+                    }
+                }
+            }
+        }
+    }
+
+    .work__bottom {
+        background-color: $color-black-2;
+
+        .row {
+            width: 75%;
+            margin: 0 auto;
+
+            .workbot__item {
+                text-align: center;
+                padding: 0 $pd-1;
+                color: $color-white-2;
+
+                .work__icon {
+                    margin-bottom: $mg-0;
+                    font-size: $fs-5 + 1;
+
+                    i {
+                        padding-right: $pd-4 + 2;
+                    }
+
+                    span {
+                        letter-spacing: $letter-spacing-2;
+                    }
+                }
+
+                h1 {
+                    font-size: $fs-2;
+                    letter-spacing: $letter-spacing-2;
+                    margin-top: $mg-1;
+                }
+            }
+        }
+    }
+
+    @include responsive("extra-large") {
+        .work__top {
+            .work__content {
+                width: 85%;
+            }
+        }
+    }
+
+    @include responsive("large") {
+        .work__bottom {
+            background-color: $color-black-2;
+
+            .row {
+                width: 95%;
+            }
+        }
+    }
+
+    @include responsive("medium") {
+        .work__top {
+            .work__content {
+                width: 90%;
+
+                .nav-tabs {
+                    display: block;
+
+                    .nav-item {
+                        width: 100%;
+
+                        .nav-link {
+                            width: 100%;
+                            margin-right: 0;
+
+                            i {
+                                width: 100%;
+
+                                &::after {
+                                    left: 49.5%;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .tab-content {
+                    .work__item {
+
+                        h1 {
+                            font-size: $fs-3 + 2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

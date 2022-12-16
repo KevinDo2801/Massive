@@ -1,0 +1,166 @@
+.skill {
+    background-image: url(../img/tablet-pen.jpg);
+    height: 670px;
+    @extend %backgroundImg;
+    background-attachment: fixed;
+    color: $color-white-2;
+    line-height: $line-height-4;
+    position: relative;
+
+    .dark__overlay {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        content: "";
+        background: rgba(0, 0, 0, .5);
+    }
+
+    .skill__content {
+        width: 75%;
+        margin: 0 auto;
+        position: relative;
+    }
+    
+    .skill__left {
+        text-align: center;
+        display: flex;
+        height: 500px;
+        align-items: center;
+        justify-content: center;
+        
+        h1 {
+            font-size: $fs-7;
+            letter-spacing: $letter-spacing-3;
+        }
+    }
+    
+    .skill__right {
+        color: $color-white-2;
+        padding-left: $pd-3;
+
+        h1 {
+            font-size: $fs-7;
+            margin-bottom: $mg-5;
+            letter-spacing: $letter-spacing-2;
+        }
+
+        p {
+            margin-bottom: $mg-5;
+            font-size: $fs-2;
+        }
+
+
+        .progress__skill {
+            padding-top: $pd-1;
+
+            .progress__overlay {
+                width: 100%;
+                background-color: $color-black-6;
+                margin-bottom: $mg-2;
+                margin-top: $mg-0;
+                position: relative;
+
+                span {
+                    border: 1px solid $color-gray-5;
+                    border-radius: 20px;
+                    background-color: $color-gray-5;
+                    padding: 0 $pd-4;
+
+                    &::after {
+                        position: absolute;
+                        top: 16px;
+                        left: 16px;
+                        content: "";
+                        border: 1px solid $color-gray-5;
+                        background-color: $color-gray-5;
+                        transform: rotate(45deg);
+                        width: 5px;
+                        height: 5px;
+                    }
+                }
+
+                .skill__1 {
+                    width: 80%;
+                    background-color: $color-white-2 !important;
+                    border: 0px solid $color-white-2;
+                    border-spacing: 0px;
+                    @include styleText($color-black-0, $fs-8, $fw-4);
+                    padding-left: $pd-0 - 2;
+                    line-height: $line-height-3;
+
+                    span {
+                        position: absolute;
+                        top: -25px;
+                        left: 74%;
+
+                    }
+                }
+
+                .skill__2 {
+                    width: 90%;
+                    background-color: $color-white-2 !important;
+                    border: 0px solid $color-white-2;
+                    @include styleText($color-black-0, $fs-8, $fw-4);
+                    padding-left: $pd-0 - 2;
+                    line-height: $line-height-3;
+
+                    span {
+                        position: absolute;
+                        top: -25px;
+                        left: 84%;
+
+                    }
+                }
+
+                .skill__3 {
+                    width: 75%;
+                    background-color: $color-white-2 !important;
+                    border: 0px solid $color-white-2;
+                    @include styleText($color-black-0, $fs-8, $fw-4);
+                    padding-left: $pd-0 - 2;
+                    line-height: $line-height-3;
+
+                    span {
+                        position: absolute;
+                        top: -25px;
+                        left: 69%;
+
+                    }
+                }
+            }
+        }
+    }
+
+    @include responsive("large") {
+        height: 730px;
+
+        .dark__overlay{
+            display: none;
+        }
+        .skill__left{
+            height: 100px;
+        }
+
+        .skill__right{
+            padding-left: 0;
+
+            h1{
+                font-size: $fs-3;
+            }
+        }
+    }
+    @include responsive("medium") {
+        .skill__left{
+            h1{
+                font-size: $fs-3;
+                letter-spacing: $letter-spacing-4;
+            }
+        }
+    }
+
+    @include responsive("small") {
+        height: 850px;
+    }
+}
